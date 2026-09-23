@@ -1,4 +1,4 @@
-# Heavy Equipment Selling Price Prediction
+# Heavy Equipment Valuation and prediction
 
 Predicts resale price of heavy equipment (excavators, wheel loaders, motorgraders etc.) from transaction, spec and usage data. Metric is RMSLE since the target ranges from a few thousand to a few hundred thousand dollars and we care about relative error, not absolute.
 
@@ -21,7 +21,7 @@ heavy-equipment-price-prediction/
 
 **preprocessing.py**
 
-Load train/test with explicit dtypes (numeric cols vs everything else as str), parse TransactionDate separately. ManufactureYear has junk values below 1900 in it so those get set to NaN before computing age.
+Load train/test with explicit dtypes (numeric cols vs everything else as str), parse TransactionDate separately. ManufactureYear has junk values below 1900 in it so those get set to NaN before computing age. Get the datasets from Kaggle by typing out "Heavy Equipment Selling Price Prediction"
 
 Feature engineering is mostly mechanical stuff built off age and hours:
 - `MachineAge` = TransactionYear - ManufactureYear
